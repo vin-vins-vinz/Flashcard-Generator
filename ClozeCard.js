@@ -1,6 +1,26 @@
-var BasicCard = require("/BasicCard.js");
+// var BasicCard = require("/BasicCard.js");
 
+function ClozeCard(fullText, cloze, partial){
+	this.cloze = cloze;
+	this.fullText = fullText
+	this.partial = function(){
+		var fullTextArray = [];
+		fullTextArray.push(string.split(fullText));
+		for (i=0; i<fullTextArray.length; i++){
+			if (fullTextArray[i] === cloze){
+				fullTextArray[i].replace("...");
+				Array.join(fullTextArray)
+			}
+		}
 
+	}
+}
+
+var firstPresidentCloze = new ClozeCard("George Washington was the first president of the United States.", "George Washington");
+
+console.log(firstPresidentCloze.cloze);
+console.log(firstPresidentCloze.fullText);
+console.log(firstPresidentCloze.partial);
 
 // Create a new file named ClozeCard.js:
 // This file should define a Node module that exports a constructor for creating cloze-deletion flashcards, e.g.: module.exports = ClozeCard;
@@ -13,15 +33,6 @@ var BasicCard = require("/BasicCard.js");
 // The bulk of this assignment is implementing ClozeCard. If you build a robust ClozeCard implementation, feel free to try your hand at implementing a front-end, as well.
 // Examples
 
-// Your constructors should work as follows.
-// var firstPresident = new BasicCard(
-//     "Who was the first president of the United States?", "George Washington");
-
-// // "Who was the first president of the United States?"
-// console.log(firstPresident.front); 
-
-// // "George Washington"
-// console.log(firstPresident.back); 
 
 // var firstPresidentCloze = new ClozeCard(
 //     "George Washington was the first president of the United States.", "George Washington");
